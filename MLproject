@@ -1,0 +1,12 @@
+name: docker-mnist
+
+docker_env:
+  image:  mlflow-docker-mnist
+
+entry_points:
+  main:
+    parameters:
+      epochs: int
+      learning_rate: float
+      batch_size: int
+    command: "python train.py --epochs {epochs} --learning_rate {learning_rate} --batch_size {batch_size}"
